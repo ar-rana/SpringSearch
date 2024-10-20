@@ -1,0 +1,48 @@
+.container {
+  width: 350px;
+  height: 500px;
+  perspective: 800px; 
+}
+
+.container:hover > .card {
+  cursor: pointer;
+  transform: rotateY(180deg);
+}
+
+.card {
+  height: 100%;
+  width: 100%;
+  position: relative;
+  transition: transform 1100ms;
+  transform-style: preserve-3d; /*treates this card as a 3d object*/
+}
+
+.frontView,
+.backView {
+  height: 100%;
+  width: 100%;
+  border-radius: 2rem;
+  box-shadow: 0 0 5px 2px rgba(211, 205, 205, 0.25);
+  position: absolute;
+  backface-visibility: hidden;
+}
+
+.frontView {
+  color: rgb(247, 29, 29);
+  background-image: url(https://source.unsplash.com/random/350x500);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.backView {
+  color: rgb(19, 221, 12);
+  background-color: #1937e2;
+  transform: rotateY(180deg);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5rem;
+}

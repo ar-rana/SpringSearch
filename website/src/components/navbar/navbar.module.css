@@ -1,0 +1,92 @@
+.navbar{
+    display: flex;
+    height: 3rem;
+    background-color: #41E751;
+    width: 100%;
+    color: rgb(39, 37, 37);
+    align-items: center;
+}
+
+.wave {
+    position: absolute;
+    top: 3rem;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    transform: rotate(180deg);
+}
+
+.wave svg {
+    position: relative;
+    display: block;
+    width: calc(100% + 1.3px);
+    height: 38px;
+}
+
+.wave .fill {
+    fill: #41E751;
+}
+
+.leftItems{
+    background-color: transparent; 
+}
+
+.leftItems h4{
+    margin: 0 35px;
+    background-color: transparent;
+    font-weight: 700;
+    font-size: 20px;
+}
+
+.rightItems {
+    display: flex;
+    background-color: transparent;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: auto;
+    margin-right: 30px;
+}
+
+.rightItems button {
+    border: none;
+    cursor: pointer;
+    background-color: transparent;
+    margin: 0 5px;
+    text-decoration: none;
+    font-size: 16px;
+    padding: 4px 13px;
+    border-radius: 12px;
+}
+
+.rightItems button:hover {
+    box-shadow: 1px 1px #3e3e3e, 1px 1px #3e3e3e, 2px 2px #3e3e3e, 2px 2px #3e3e3e, 2px 2px #3e3e3e, 3px 3px #3e3e3e, 3px 3px #3e3e3e, 4px 4px #3e3e3e;
+}
+
+.icon {
+    display: none;
+}
+
+@media (max-width: 600px) {
+    .rightItems {
+        display: none;
+    }
+    .navbar {
+        justify-content: space-around;
+    }
+    .icon {
+        display: block;
+    }
+    .rightItems {
+        display: none;
+        position: absolute;
+        z-index: 100;
+        width: 100%;
+        height: 50%;
+        flex-direction: column;
+        background: linear-gradient(45deg, rgb(139, 235, 126),rgb(74, 236, 74), rgb(44, 255, 2));;
+        justify-content: space-around;
+        align-items: center;
+        top: 0px;
+    }
+}

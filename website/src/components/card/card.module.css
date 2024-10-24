@@ -1,6 +1,6 @@
 .container {
   width: 350px;
-  height: 500px;
+  height: 400px;
   perspective: 800px; 
 }
 
@@ -28,21 +28,33 @@
 }
 
 .frontView {
-  color: rgb(247, 29, 29);
+  color: white;
   background-image: url(https://source.unsplash.com/random/350x500);
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  font-weight: bold;
+}
+
+.frontView img {
+  width: 16rem;
+  height: 16rem;
 }
 
 .backView {
   color: rgb(19, 221, 12);
-  background-color: #1937e2;
+  background-color: white;
   transform: rotateY(180deg);
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 5rem;
+}
+
+.backView h3 {
+  background-color: transparent;
+  color: black;
+  margin: 1rem 1.25rem;
 }

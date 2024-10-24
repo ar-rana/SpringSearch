@@ -3,18 +3,17 @@ import style from "./navbar.module.css";
 
 const Navbar = () => {
   return (
-    <div>
+    <div className={style.nav_Container}>
       <div className={style.navbar}>
         <div className={style.leftItems}>
           <h4>SpringSearch</h4>
         </div>
-        {/* <div className={style.icon}>H</div> */}
         <div className={style.rightItems}>
-          <button>Hello</button>
-          <button>Hello</button>
-          <button>Hello</button>
+          <button>AOP</button>
+          <button>Web-App & REST</button>
+          <button>JDBC</button>
+          <button>Fundamentals</button>
         </div>
-        
       </div>
       <div className={style.wave}>
         <svg

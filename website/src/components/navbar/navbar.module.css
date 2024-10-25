@@ -1,6 +1,8 @@
 .nav_Container {
     z-index: 100;
     margin-bottom: 3rem;
+    position: sticky;
+    top: 0;
 }
 
 .navbar{
@@ -36,13 +38,7 @@
 
 .leftItems{
     background-color: transparent; 
-}
-
-.leftItems h4{
-    margin: 0 35px;
-    background-color: transparent;
-    font-weight: 700;
-    font-size: 20px;
+    padding: 1rem;
 }
 
 .rightItems {
@@ -63,6 +59,14 @@
     font-size: 16px;
     padding: 4px 13px;
     border-radius: 12px;
+}
+
+a {
+    border: none;
+    cursor: pointer;
+    background-color: transparent;
+    text-decoration: none;
+    color: black;
 }
 
 .rightItems button:hover {

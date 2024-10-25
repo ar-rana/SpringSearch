@@ -1,18 +1,30 @@
 import React from "react";
 import style from "./navbar.module.css";
+import { Link } from "react-router-dom";
+import Button from "../button/Button";
 
 const Navbar = () => {
   return (
     <div className={style.nav_Container}>
       <div className={style.navbar}>
         <div className={style.leftItems}>
-          <h4>SpringSearch</h4>
+          <a href="/">
+            <Button />
+          </a>
         </div>
         <div className={style.rightItems}>
-          <button>AOP</button>
-          <button>Web-App & REST</button>
-          <button>JDBC</button>
-          <button>Fundamentals</button>
+          <Link to="/aop">
+            <button>AOP</button>
+          </Link>
+          <Link to="/webapprest">
+            <button>Web-App & REST</button>
+          </Link>
+          <Link to="/jdbc">
+            <button>JDBC</button>
+          </Link>
+          <Link to="/fundamentals">
+            <button>Fundamentals</button>
+          </Link>
         </div>
       </div>
       <div className={style.wave}>

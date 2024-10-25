@@ -5,7 +5,7 @@ import React from 'react';
 const Button = () => {
   return (
     <>
-    <button className={styles.btn}>Hello</button>
+    <button className={styles.btn}>SpringSearch</button>
     </>
   )
 }

@@ -10,23 +10,6 @@ const Home = () => {
   const springBootInfo =
     "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Veritatis animi assumenda porro, magnam nobis ea voluptates! Ad necessitatibus accusantium nisi, natus, eaque suscipit ut doloremque tenetur ullam quibusdam quo alias.";
 
-//   useEffect(() => {
-//     const observer = new IntersectionObserver((entries) => {
-//       entries.forEach((entry) => {
-//         if (entry.isIntersecting) {
-//           entry.target.classList.add(styles.show); 
-//         }
-//       });
-//     });
-
-//     const showElements = document.querySelectorAll(`.${styles.hidden}`);
-//     showElements.forEach((ele) => observer.observe(ele));
-
-//     return () => {
-//       showElements.forEach((ele) => observer.unobserve(ele));
-//     };
-//   }, []);
-
   return (
     <div>
       <div className={styles.hero}>

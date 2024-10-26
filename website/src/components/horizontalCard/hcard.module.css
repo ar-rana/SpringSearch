@@ -1,0 +1,55 @@
+.show {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.hidden {
+  opacity: 0;
+  transform: translateX(-50px);
+}
+
+.card {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 80%;
+  margin: 1.5rem 2rem;
+  box-shadow: 0px 0px 3px 3px rgba(215, 219, 214, 0.25);
+  border-radius: 20px;
+  background-color: transparent;
+  padding: 12px;
+  margin-left: auto;
+  margin-right: auto;
+  /* transform: translateX(0px); */
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.Img_Container {
+  flex: 1; /* by using this we allocate less space for the image */
+  display: flex;
+  height: 15rem;
+  background-color: transparent;
+}
+
+.Img_Container img {
+  background-color: transparent;
+}
+
+.info {
+  color: aliceblue;
+  margin: 1.3rem;
+}
+
+.Img_Container,
+.info {
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+@media (max-width: 700px) {
+  .card {
+    flex-direction: column;
+  }
+  .Img_Container {
+    flex: none;
+  }
+}

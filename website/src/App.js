@@ -1,4 +1,5 @@
 import './App.css';
+import Aop from './components/aop/Aop';
 import Button from './components/button/Button';
 import Card from './components/card/Card';
 import Jdbc from './components/DbPage/Jdbc';
@@ -13,7 +14,7 @@ function App() {
     <Navbar/>
     <Routes>
       <Route exact path='/' element={<Home/>}/>
-      <Route exact path='/aop' element={<Home/>}/>
+      <Route exact path='/aop' element={<Aop/>}/>
       <Route exact path='/fundamentals' element={<Home/>}/>
       <Route exact path='/jdbc' element={<Jdbc/>}/>
       <Route exact path='/webapprest' element={<Home/>}/>

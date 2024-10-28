@@ -1,0 +1,26 @@
+.snippet {
+  display: flex;
+  box-sizing: border-box;
+  margin: 0.5rem 0rem;
+  color: aliceblue;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease, transform 0.5s ease;
+}
+
+.snippet p {
+  background-color: transparent;
+  box-shadow: 0px 0px 3px 3px rgba(215, 219, 214, 0.25);
+  padding: 14px;
+  border-radius: 20px;
+}
+
+.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.hidden {
+  opacity: 0;
+  transform: translateY(20px);
+}

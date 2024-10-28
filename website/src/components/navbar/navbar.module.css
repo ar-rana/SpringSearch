@@ -23,6 +23,7 @@
     overflow: hidden;
     line-height: 0;
     transform: rotate(180deg);
+    background-color: transparent;
 }
 
 .wave svg {
@@ -30,6 +31,7 @@
     display: block;
     width: calc(100% + 1.3px);
     height: 38px;
+    background-color: transparent;
 }
 
 .wave .fill {

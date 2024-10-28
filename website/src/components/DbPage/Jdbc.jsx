@@ -1,33 +1,8 @@
 import React, { useEffect } from "react";
 import styles from "./jdbc.module.css";
+import InfoCard from "../infoCard/InfoCard";
 
 const Jdbc = () => {
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry, index) => {
-          if (entry.isIntersecting) {
-            setTimeout(() => {
-              entry.target.classList.add(styles.show);
-              entry.target.classList.remove(styles.hidden);
-            }, index * 200);
-          } else {
-            entry.target.classList.remove(styles.show);
-            entry.target.classList.add(styles.hidden);
-          }
-        });
-      },
-      { threshold: 0.4 }
-    );
-
-    const showElements = document.querySelectorAll(`.${styles.snippet}`);
-    showElements.forEach((ele) => observer.observe(ele));
-
-    return () => {
-      showElements.forEach((ele) => observer.unobserve(ele));
-    };
-  }, []);
-
   return (
     <div className="">
       <div className={styles.header}>
@@ -43,42 +18,11 @@ const Jdbc = () => {
           <h2>JDBC</h2>
         </div>
         <div className={styles.data}>
-          <div className={styles.snippet}>
-            <img src="" />
-            <p>
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsum, a
-              id repellendus veniam, ducimus praesentium expedita voluptatem
-              ipsam harum reiciendis cupiditate. Temporibus ducimus reiciendis
-              dolor debitis! Incidunt aspernatur impedit distinctio?
-            </p>
-          </div>
-          <div className={styles.snippet}>
-            <img src="" />
-            <p>
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsum, a
-              id repellendus veniam, ducimus praesentium expedita voluptatem
-              ipsam harum reiciendis cupiditate. Temporibus ducimus reiciendis
-              dolor debitis! Incidunt aspernatur impedit distinctio?
-            </p>
-          </div>
-          <div className={styles.snippet}>
-            <img src="" />
-            <p>
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsum, a
-              id repellendus veniam, ducimus praesentium expedita voluptatem
-              ipsam harum reiciendis cupiditate. Temporibus ducimus reiciendis
-              dolor debitis! Incidunt aspernatur impedit distinctio?
-            </p>
-          </div>
-          <div className={styles.snippet}>
-            <img src="" />
-            <p>
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsum, a
-              id repellendus veniam, ducimus praesentium expedita voluptatem
-              ipsam harum reiciendis cupiditate. Temporibus ducimus reiciendis
-              dolor debitis! Incidunt aspernatur impedit distinctio?
-            </p>
-          </div>
+          <InfoCard />
+          <InfoCard />
+          <InfoCard />
+          <InfoCard />
+          <InfoCard />
         </div>
       </div>
       <div className={styles.info}>
@@ -87,42 +31,10 @@ const Jdbc = () => {
           <h2>SQL</h2>
         </div>
         <div className={styles.data}>
-          <div className={styles.snippet}>
-            <img src="" />
-            <p>
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsum, a
-              id repellendus veniam, ducimus praesentium expedita voluptatem
-              ipsam harum reiciendis cupiditate. Temporibus ducimus reiciendis
-              dolor debitis! Incidunt aspernatur impedit distinctio?
-            </p>
-          </div>
-          <div className={styles.snippet}>
-            <img src="" />
-            <p>
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsum, a
-              id repellendus veniam, ducimus praesentium expedita voluptatem
-              ipsam harum reiciendis cupiditate. Temporibus ducimus reiciendis
-              dolor debitis! Incidunt aspernatur impedit distinctio?
-            </p>
-          </div>
-          <div className={styles.snippet}>
-            <img src="" />
-            <p>
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsum, a
-              id repellendus veniam, ducimus praesentium expedita voluptatem
-              ipsam harum reiciendis cupiditate. Temporibus ducimus reiciendis
-              dolor debitis! Incidunt aspernatur impedit distinctio?
-            </p>
-          </div>
-          <div className={styles.snippet}>
-            <img src="" />
-            <p>
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsum, a
-              id repellendus veniam, ducimus praesentium expedita voluptatem
-              ipsam harum reiciendis cupiditate. Temporibus ducimus reiciendis
-              dolor debitis! Incidunt aspernatur impedit distinctio?
-            </p>
-          </div>
+          <InfoCard />
+          <InfoCard />
+          <InfoCard />
+          <InfoCard />
         </div>
       </div>
     </div>

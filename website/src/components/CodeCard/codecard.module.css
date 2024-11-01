@@ -1,0 +1,48 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-content: space-between;
+  width: 80%;
+  padding: 14px;
+  background-color: rgb(201, 201, 198);
+  border-style: solid;
+  border-color: rgb(131, 125, 125);
+  gap: 15px;
+  border-radius: 25px;
+}
+
+.code {
+  background-color: rgb(202, 202, 202);
+  flex: 3;
+  border-style: solid;
+  border-color: rgb(131, 125, 125);
+  margin: 1rem;
+  padding: 10px;
+}
+
+.code pre {
+  background-color: transparent;
+}
+.code pre code {
+  background-color: transparent;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+.text {
+  background-color: transparent;
+  flex: 2;
+  margin: 1rem;
+}
+
+@media (max-width: 600px) {
+  .container {
+    flex-direction: column;
+    padding: 12px;
+  }
+
+  .code {
+    width: 90%;
+  }
+}

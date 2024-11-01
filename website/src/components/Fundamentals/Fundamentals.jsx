@@ -1,8 +1,7 @@
 import React from "react";
-import styles from "./web.module.css";
-import Codecard from "../CodeCard/Codecard";
+import styles from "./fundamentals.module.css";
 
-const Web = () => {
+const Fundamentals = () => {
   return (
     <div>
       <div className={styles.header}>
@@ -10,13 +9,11 @@ const Web = () => {
           <h1>Spring </h1>
           <span> Search</span>
         </div>
-        <p>Web Apps & Rest</p>
+        <p>Fundamentals</p>
       </div>
-      <div className={styles.info}>
-      <Codecard />
-      </div>
+      <div></div>
     </div>
   );
 };
 
-export default Web;
+export default Fundamentals;

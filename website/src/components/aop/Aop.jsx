@@ -2,6 +2,7 @@ import React from "react";
 import styles from "./aop.module.css";
 import HCard from "../horizontalCard/HCard";
 import HCard2 from "../horizontalCard/HCard2";
+import HCard3 from "../horizontalCard/HCard3";
 
 const Aop = () => {
   const data = [
@@ -36,14 +37,14 @@ const Aop = () => {
         </div>
       </div>
       <div className={styles.info}>
-        <HCard title={"Joint Point"} text={data[0]}/>
-        <HCard title={"Aspect"} text={data[2]}/>
-        <HCard2 title={"Advice"} text={data[1]}/>
-        <HCard2 title={"Pointcut"} text={data[3]}/>
-        <HCard title={"Target Object"} text={data[4]}/>
-        <HCard2 title={"Weaving"} text={data[5]}/>
-        <HCard title={"Proxy"} text={data[6]}/>
-        <HCard2 title={"Introduction"} text={data[7]}/>
+        <HCard3 title={"Joint Point"} text={data[0]}/>
+        <HCard3 title={"Aspect"} text={data[2]}/>
+        <HCard3 title={"Advice"} text={data[1]}/>
+        <HCard3 title={"Pointcut"} text={data[3]}/>
+        <HCard3 title={"Target Object"} text={data[4]}/>
+        <HCard3 title={"Weaving"} text={data[5]}/>
+        <HCard3 title={"Proxy"} text={data[6]}/>
+        <HCard3 title={"Introduction"} text={data[7]}/>
       </div>
     </div>
   );

@@ -103,3 +103,19 @@
   }
 }
 
+@media (max-width: 600px) {
+  .box {
+    display: none;
+  }
+  .connect p {
+    font-size: 12px;
+  }
+  .footer {
+    top: 55px;
+  }
+  .media img {
+    width: 30px;
+    height: 30px;
+  }
+}
+

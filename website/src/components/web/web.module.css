@@ -31,10 +31,31 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin: 2rem;
+}
+
+.infoCard {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 40px;
+  align-items: center;
+  gap: 2rem;
+}
+
+.info h1 {
+  color: white;
+  margin: 2rem 2rem;
+}
+.info span {
+  color: white;
+  text-wrap: wrap;
 }
 
 @media (max-width:600px) {
   .header {
       flex-direction: column;
+  }
+  .infoCard {
+    flex-direction: column;
   }
 }

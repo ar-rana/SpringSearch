@@ -1,7 +1,5 @@
 import "./App.css";
 import Aop from "./components/aop/Aop";
-import Button from "./components/button/Button";
-import Card from "./components/card/Card";
 import Jdbc from "./components/DbPage/Jdbc";
 import Footer from "./components/footer/Footer";
 import Home from "./components/Home/Home";
@@ -9,6 +7,7 @@ import Navbar from "./components/navbar/Navbar";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Web from "./components/web/Web";
 import Fundamentals from "./components/Fundamentals/Fundamentals";
+import ChatBot from "./components/ChatBot/ChatBot";
 
 function App() {
   return (
@@ -22,6 +21,7 @@ function App() {
         <Route exact path="/webapprest" element={<Web />} />
       </Routes>
       <Footer />
+      <ChatBot />
     </BrowserRouter>
   );
 }

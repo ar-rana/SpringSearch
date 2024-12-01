@@ -6,9 +6,9 @@ import Card from "../card/Card";
 
 const Home = () => {
   const springInfo =
-    "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Veritatis animi assumenda porro, magnam nobis ea voluptates! Ad necessitatibus accusantium nisi, natus, eaque suscipit ut doloremque tenetur ullam quibusdam quo alias.";
+    "Spring is a tool that helps to create a loosely coupled application. It requires a lot of boiler plate code to even run a small task with its main feature being dependency injection. ";
   const springBootInfo =
-    "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Veritatis animi assumenda porro, magnam nobis ea voluptates! Ad necessitatibus accusantium nisi, natus, eaque suscipit ut doloremque tenetur ullam quibusdam quo alias.";
+    "Spring Boot is an extension of Spring framework, it can be used to create a production read stand-alone application in very less time. Spring Boot is auto-configured thus its easier to use and comes with its own features like starter dependencies. Spring Boot is widely used in developing REST API's. ";
 
   return (
     <div>
@@ -29,10 +29,14 @@ const Home = () => {
         <h1>What is Spring?</h1>
         <div className={styles.subInformation}>
           <span>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum
-            dolore accusantium pariatur laudantium cum voluptates enim ipsa rem
-            quae! Voluptate accusantium rem cumque, laborum assumenda incidunt
-            omnis modi praesentium vitae!
+            Spring is an open-source light weight framework that allows java
+            developer to build simple, reliable and scalable enterprise
+            applications. This framework utilizes various techniques like Aspect
+            Oriented Programming (AOP), Dependency Injection, Plain Old Java
+            Objects to develop an application. Spring can be said as a bundle of
+            sub-framework, also called layers like AOP, Spring ORM, Spring Web
+            Flow and Spring MVC. These modules can be used separately to create
+            web applications.
           </span>
         </div>
       </div>

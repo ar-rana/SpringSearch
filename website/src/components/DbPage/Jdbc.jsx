@@ -58,7 +58,7 @@ const Jdbc = () => {
        Used to test operations like CRUD(create, read, update, delete) operations performed by the JDBC Driver.\r\n
     \r\n  
      4) JDBC-ODBC Bridge Driver\r\n
-       - It is used to connect the database driver to the database. It translates JDBC API calls to ODBC function calls. It is generally used in databases that have ODBC drivers embedded in them.\r\n`,
+       It is used to connect the database driver to the database. It translates JDBC API calls to ODBC function calls. It is generally used in databases that have ODBC drivers embedded in them.\r\n`,
   ];
 
   const RDBText = [

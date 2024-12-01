@@ -27,7 +27,7 @@
 .Img_Container {
   flex: 1; /* by using this we allocate less space for the image */
   display: flex;
-  height: 15rem;
+  height: 13rem;
   background-color: transparent;
 }
 

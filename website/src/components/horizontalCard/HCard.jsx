@@ -1,8 +1,7 @@
 import React, { useEffect } from "react";
 import styles from "./hcard.module.css";
-import blob from "../../assets/blob.svg";
 
-const HCard = () => {
+const HCard = (props) => {
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
@@ -36,18 +35,12 @@ const HCard = () => {
     <div>
       <div className={`${styles.card} ${styles.hidden}`}>
         <div className={`${styles.Img_Container} ${styles.hidden}`}>
-          <img src={blob} />
+          <img src={props.img} />
         </div>
         <div className={`${styles.info} ${styles.hidden}`}>
-          <p>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Enim
-            veniam repellendus qui ex voluptatem reprehenderit? At placeat,
-            officiis beatae id doloribus porro perspiciatis nihil ad rerum
-            commodi magni provident quo. Lorem, ipsum dolor sit amet consectetur
-            adipisicing elit. Enim veniam repellendus qui ex voluptatem
-            reprehenderit? At placeat, officiis beatae id doloribus porro
-            perspiciatis nihil ad rerum commodi magni provident quo.
-          </p>
+          <h2>{props.title}</h2>
+          <br />
+          <p>{props.text}</p>
         </div>
       </div>
     </div>

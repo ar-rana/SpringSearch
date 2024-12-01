@@ -26,7 +26,15 @@ const Footer = () => {
             </div>
           </div>
           <div className={styles.box}>
-            <p>Hellos</p>
+            <p>Credit: </p>
+            <p>
+              <a href="https://storyset.com/web" target="_blank">
+                Storyset, Web Illustrations
+              </a>
+            </p>
+            <p>
+              <a href="https://docs.spring.io/" target="_blank">Spring IO</a>
+            </p>
           </div>
         </div>
       </div>

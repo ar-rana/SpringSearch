@@ -1,7 +1,5 @@
 import React from "react";
 import styles from "./aop.module.css";
-import HCard from "../horizontalCard/HCard";
-import HCard2 from "../horizontalCard/HCard2";
 import HCard3 from "../horizontalCard/HCard3";
 
 const Aop = () => {

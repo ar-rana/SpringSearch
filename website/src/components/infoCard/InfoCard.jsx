@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import styles from "./infocard.module.css";
 
-const InfoCard = () => {
+const InfoCard = (props) => {
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
@@ -33,10 +33,7 @@ const InfoCard = () => {
       <div className={styles.snippet}>
         <img src="" />
         <p>
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsum, a id
-          repellendus veniam, ducimus praesentium expedita voluptatem ipsam
-          harum reiciendis cupiditate. Temporibus ducimus reiciendis dolor
-          debitis! Incidunt aspernatur impedit distinctio?
+          {props.text}
         </p>
       </div>
     </div>

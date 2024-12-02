@@ -16,15 +16,51 @@ const ChatBubble = (props) => {
 
 const ChatBot = () => {
   const [isActive, setIsActive] = useState(false);
-  const [chat, setChat] = useState([]);
+  const [chats, setChat] = useState([]);
+  const [question, setQuestion] = useState("");
+  const [loading, setLoading] = useState(false);
 
   const toggleChatBox = () => {
     setIsActive(!isActive);
   };
 
-  const askQuestion = (e) => {
+  const askQuestion = async (e) => {
     e.preventDefault();
-    return "this is reply";
+    if (question === "") return;
+    const body = {
+      text: question,
+      isReply: false,
+    };
+
+    setLoading(true);
+    setChat((prevChats) => [...prevChats, body]);
+
+    try {
+      const res = await fetch("http://localhost:8000/answerJava", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(question),
+      });
+
+      const data = await res.text();
+      console.log(data);
+      const answer = {
+        text: data,
+        isReply: true,
+      };
+
+      console.log(answer);
+
+      setChat((prevChat) => [...prevChat, answer]);
+    } catch (e) {
+      console.log("Server is Offline!!!");
+      console.log(e);
+    } finally {
+      setLoading(false);
+      setQuestion("");
+    }
   };
 
   return (
@@ -38,31 +74,42 @@ const ChatBot = () => {
             <h3>Ask me JAVA!!</h3>
           </div>
           <div className={styles.messageList}>
-            <div>
+            {chats.map((chat, i) => (
+              <ChatBubble key={i} text={chat.text} isReply={chat.isReply} />
+            ))}
+            {/* <div>
               <ChatBubble
                 text={
-                  "Tell me more about Java and more and more and more and more...."
+                  "Tell me more about Java and more and more and more and more....more and more and more and moremore and more and more and moremore and more and more and moremore and more and more and moremore and more and more and moremore and more and more and moremore and more and more and moremore and more and more and moremore and more and more and moremore and more and more and moremore and more and more and moremore and more and more and morev Third last and more and more Second last more and more and more last last and more and more"
                 }
                 isReply={false}
               />
               <ChatBubble
-                text={"What is Spring Boot? Why are you asking me? "}
+                text={
+                  "What is Spring Boot? Why are you asking me? more and more and more and moremore and more and more and moremore and more and more and moremore and more and more and moremore and more and more and moremore and more and more and moremore and more and more and moremore and more and more and moremore and more and more and moremore and more and more and moremore and more and more and moremore and more and more and moremore and more and more and moremore and more and more and more Third last and more and more Second last more and more and more last last and more and more"
+                }
                 isReply={true}
               />
-            </div>
+            </div> */}
           </div>
-        </div>
-        <div className={styles.text}>
-          <form onSubmit={(e) => askQuestion(e)}>
-            <input
-              className={styles.inptext}
-              type="text"
-              placeholder="ask java"
-            />
-            <button className={styles.inpbtn} type="submit">
-              Ask!!
-            </button>
-          </form>
+          <div className={styles.text}>
+            <form onSubmit={(e) => askQuestion(e)}>
+              <input
+                className={styles.inptext}
+                type="text"
+                placeholder="ask java"
+                value={question}
+                onChange={(e) => setQuestion(e.target.value)}
+              />
+              <button
+                className={styles.inpbtn}
+                type="submit"
+                disabled={loading}
+              >
+                {loading ? "Thinking..." : "Ask!!"}
+              </button>
+            </form>
+          </div>
         </div>
       </div>
     </div>

@@ -41,11 +41,12 @@ const ChatBot = () => {
         headers: {
           "Content-Type": "application/json",
         },
+        credentials: "include",
         body: JSON.stringify(question),
       });
-
+      console.log("res: ", res);
       const data = await res.text();
-      console.log(data);
+      console.log("data: ", data);
       const answer = {
         text: data,
         isReply: true,
@@ -55,7 +56,16 @@ const ChatBot = () => {
 
       setChat((prevChat) => [...prevChat, answer]);
     } catch (e) {
-      console.log("Server is Offline!!!");
+      try {
+        window.location.href =
+          "http://localhost:8000/oauth2/authorization/google";
+      } catch (e) {
+        const answer = {
+          text: "Sorry for the inconvinience, the Server is Offline!!",
+          isReply: true,
+        };
+        setChat((prevChat) => [...prevChat, answer]);
+      }
       console.log(e);
     } finally {
       setLoading(false);

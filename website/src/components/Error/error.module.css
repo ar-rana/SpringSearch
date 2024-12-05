@@ -1,0 +1,25 @@
+.main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    z-index: 10;
+    align-items: center;
+    justify-content: center;
+    gap: 0;
+}
+
+.container img {
+    height: 20rem;
+    background-color: transparent;
+}
+
+.container span {
+    color: white;
+    font-weight: bold;
+    font-size: xx-large;
+}

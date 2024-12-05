@@ -33,7 +33,7 @@ const Footer = () => {
               </a>
             </p>
             <p>
-              <a href="https://docs.spring.io/" target="_blank">Spring IO</a>
+              <a href="https://docs.spring.io/" target="_blank">Spring.io</a>
             </p>
           </div>
         </div>

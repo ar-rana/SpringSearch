@@ -8,7 +8,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Web from "./components/web/Web";
 import Fundamentals from "./components/Fundamentals/Fundamentals";
 import ChatBot from "./components/ChatBot/ChatBot";
-import TempJsx from "./components/temp/TempJsx";
+import Error from "./components/Error/Error";
 
 function App() {
   return (
@@ -20,7 +20,7 @@ function App() {
         <Route exact path="/fundamentals" element={<Fundamentals />} />
         <Route exact path="/jdbc" element={<Jdbc />} />
         <Route exact path="/webapprest" element={<Web />} />
-        <Route exact path="/oauth2/redirect" element={<TempJsx />} />
+        <Route exact path="*" element={<Error />} />
       </Routes>
       <Footer />
       <ChatBot />

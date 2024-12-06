@@ -5,7 +5,6 @@ SpringSearch is a UI-focused project designed to provide information about the S
 ## Features
 - OAuth Server Side Session Based Authentication
 - AI ChatBot to answer Java Questions
-- ollama running on a Docker Container
 - Smooth and Dynamic UI
 - Modular CSS
 - Responsive Design
@@ -15,7 +14,10 @@ SpringSearch is a UI-focused project designed to provide information about the S
 - **Frontend**: React, Modular CSS
 - **Backend**: SpringBoot, ollama (llama 3)
 
-## Installation
+## Run on Local Machine
+### Prerequisite
+- ollama
+- IDE like IntelliJ or Eclipse
 
 1. **Clone the repository**:
    ```bash

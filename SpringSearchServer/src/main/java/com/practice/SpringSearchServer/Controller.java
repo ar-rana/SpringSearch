@@ -28,6 +28,10 @@ public class Controller {
         this.chatClient = chatClient.build();
     }
 
+    @GetMapping("/verify")
+    public String verify() {
+        return "Server Online!!";
+    }
 
     @PostMapping("/answerJava")
     public String getAnswer(@RequestBody String text) {

@@ -1,0 +1,29 @@
+version: "3.7"
+
+services:
+  springsearchserver:
+    build:
+      context: ./SpringSearchServer
+      dockerfile: Dockerfile
+    container_name: backend
+    ports:
+      - "8000:8000"
+    networks:
+      - spring-search
+    depends_on:
+      - ollama
+
+  react:
+    build:
+      context: ./website
+      dockerfile: Dockerfile
+    container_name: frontend
+    ports:
+      - "3000:3000"
+    networks:
+      - spring-search
+
+networks:
+  spring-search:
+    driver: bridge
+    name: spring-search

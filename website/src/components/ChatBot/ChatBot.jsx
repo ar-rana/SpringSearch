@@ -56,16 +56,8 @@ const ChatBot = () => {
 
       setChat((prevChat) => [...prevChat, answer]);
     } catch (e) {
-      try {
-        window.location.href =
-          "http://localhost:8000/oauth2/authorization/google";
-      } catch (e) {
-        const answer = {
-          text: "Sorry for the inconvinience, the Server is Offline!!",
-          isReply: true,
-        };
-        setChat((prevChat) => [...prevChat, answer]);
-      }
+      window.location.href =
+        "http://localhost:8000/oauth2/authorization/google";
       console.log(e);
     } finally {
       setLoading(false);
@@ -87,20 +79,6 @@ const ChatBot = () => {
             {chats.map((chat, i) => (
               <ChatBubble key={i} text={chat.text} isReply={chat.isReply} />
             ))}
-            {/* <div>
-              <ChatBubble
-                text={
-                  "Tell me more about Java and more and more and more and more....more and more and more and moremore and more and more and moremore and more and more and moremore and more and more and moremore and more and more and moremore and more and more and moremore and more and more and moremore and more and more and moremore and more and more and moremore and more and more and moremore and more and more and moremore and more and more and morev Third last and more and more Second last more and more and more last last and more and more"
-                }
-                isReply={false}
-              />
-              <ChatBubble
-                text={
-                  "What is Spring Boot? Why are you asking me? more and more and more and moremore and more and more and moremore and more and more and moremore and more and more and moremore and more and more and moremore and more and more and moremore and more and more and moremore and more and more and moremore and more and more and moremore and more and more and moremore and more and more and moremore and more and more and moremore and more and more and moremore and more and more and more Third last and more and more Second last more and more and more last last and more and more"
-                }
-                isReply={true}
-              />
-            </div> */}
           </div>
           <div className={styles.text}>
             <form onSubmit={(e) => askQuestion(e)}>

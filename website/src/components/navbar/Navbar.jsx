@@ -1,11 +1,26 @@
-import React from "react";
+import React, { useState } from "react";
 import style from "./navbar.module.css";
 import { Link } from "react-router-dom";
 import Button from "../button/Button";
+import menu from "../../assets/menu.png";
 
 const Navbar = () => {
+  const [active, setActive] = useState(false);
+  const navActive = () => {
+    setActive((prev) => !prev);
+  }
+
   return (
     <div className={style.nav_Container}>
+      <div className={`${style.nav_responsive} ${active ? style.active : ""}`}>
+        <ul>
+          <li><a href="/aop">AOP</a></li>
+          <li><a href="/webapprest">Web-App & REST</a></li>
+          <li><a href="/jdbc">JDBC</a></li>
+          <li><a href="/fundamentals">Fundamentals</a></li>
+        </ul>
+        <img onClick={navActive} className={`${style.nav_btn} ${active ? style.active : ""}`} src={menu}/> 
+      </div>
       <div className={style.navbar}>
         <div className={style.leftItems}>
           <a href="/">

@@ -53,4 +53,7 @@
   .Img_Container {
     flex: none;
   }
+  .Img_Container img {
+    width: 100%;
+  }
 }

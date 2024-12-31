@@ -32,3 +32,6 @@ SpringSearch is a UI-focused project designed to provide information about the S
 3. **Start The Project**:
     ```bash
     npm start
+
+## What I Learned 🙂
+During this project I improved my designing skills and implimented interesting CSS animations. I learned to use Spring AI and make requests to an LLM model through Spring AI. I also learned to impliment OAuth using SpringBoot and how to handle session based stateless authentication in SpringBoot. 

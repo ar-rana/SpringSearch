@@ -19,10 +19,10 @@ const Jdbc = () => {
   const JdbcText = `This code snippet is used to connect Java to a MySQL database through the 'DriverManager' class. Here instead of 'Statement' we can also use something called the 'PreparedStatement' to make the calls to the database more secure. After the read query is made to the database a 'ResultSet' Object is returned that stores the data returned by the database. 'Root' is the default username for MySQL database and we have to load the driver class 'com.mysql.cj.jdbc.Driver' which is the MYSQL JDBC driver. 'Class.forName("com.mysql.cj.jdbc.Driver")' call explicitly loads the driver class into memory which helps the 'DriverManager to manage connection.'`;
 
   const code = `
-  import java.io.*;,
-  String url = "mysql:jdbc://localhost:3306/students";
+  import java.sql.*;
+  String url = "jdbc:mysql://localhost:3306/yourDatabase";
   String password = "YourPassword";
-  String usernmae = "root";
+  String username = "root";
                 
   ResultSet resultset;
   String query = "Select * from students;";
@@ -37,11 +37,11 @@ const Jdbc = () => {
     resultset = st.executeQuery(query);
 
     while (resultset.next()) {
-      System.out.println(resultset.getString(1) + " " + resultset.getString(2) + " " resultset.getString(3));
+      System.out.println(resultset.getString(1) + " " + resultset.getString(2) + " " + resultset.getString(3));
     }
 
     } catch (Exception e) {
-      e.preintStackTrace();
+      e.printStackTrace();
     }
   }`;
 

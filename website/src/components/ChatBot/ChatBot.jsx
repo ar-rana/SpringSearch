@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import styles from "./chatbot.module.css";
 import chatbot from "../../assets/chatbot.png";
 
@@ -20,9 +20,15 @@ const ChatBot = () => {
   const [question, setQuestion] = useState("");
   const [loading, setLoading] = useState(false);
 
+  const chatRef = useRef(null);
+
   const toggleChatBox = () => {
     setIsActive(!isActive);
   };
+
+  useEffect(() => {
+    chatRef.current.scrollIntoView();
+  }, [chats])
 
   const askQuestion = async (e) => {
     e.preventDefault();
@@ -44,17 +50,26 @@ const ChatBot = () => {
         credentials: "include",
         body: JSON.stringify(question),
       });
-      console.log("res: ", res);
-      const data = await res.text();
-      console.log("data: ", data);
-      const answer = {
-        text: data,
-        isReply: true,
-      };
 
-      console.log(answer);
+      const reader = res.body.getReader();
+      const decoder = new TextDecoder();
 
-      setChat((prevChat) => [...prevChat, answer]);
+      let resp = "";
+      while (true) {
+        const { done, value } = await reader.read();
+        if (done) break;
+  
+        resp += decoder.decode(value, { stream: true });
+  
+        setChat((prevChat) => {
+          const lastMessage = prevChat[prevChat.length - 1];
+          if (lastMessage && lastMessage.isReply) {
+            return [...prevChat.slice(0, -1), { text: resp, isReply: true }];
+          } else {
+            return [...prevChat, { text: resp, isReply: true }];
+          }
+        });
+      }
     } catch (e) {
       window.location.href =
         "http://localhost:8000/oauth2/authorization/google";
@@ -79,6 +94,7 @@ const ChatBot = () => {
             {chats.map((chat, i) => (
               <ChatBubble key={i} text={chat.text} isReply={chat.isReply} />
             ))}
+            <span ref={chatRef}/>
           </div>
           <div className={styles.text}>
             <form onSubmit={(e) => askQuestion(e)}>

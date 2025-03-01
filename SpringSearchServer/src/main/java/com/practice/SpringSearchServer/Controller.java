@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
+import reactor.core.publisher.Flux;
 
 @CrossOrigin(origins = "*")
 @RestController
@@ -33,8 +34,37 @@ public class Controller {
         return "Server Online!!";
     }
 
+    // streaming response
     @PostMapping("/answerJava")
-    public String getAnswer(@RequestBody String text) {
+    public Flux<String> getAnswer(@RequestBody String text) {
+        String condition = "Your primary function is to respond to java based questions so you must only reply to java focused question and return \"ask me java!!\" otherwise";
+        String constraint = "keep your response under 300 worlds";
+
+        logger.info("User Question: "+ text);
+
+        SystemMessage llmCondition = new SystemMessage(condition);
+        SystemMessage llmConstraint = new SystemMessage(constraint);
+        UserMessage userMessage = new UserMessage(text);
+
+        Prompt ask = new Prompt(List.of(llmCondition, llmConstraint, userMessage));
+        try {
+            Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+            if (auth != null && auth.isAuthenticated()) {
+                return chatClient.prompt(ask).stream().content();
+            } else {
+                return Flux.just("UNAUTHORIZED USER");
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            System.out.println(e.getMessage());
+        }
+        return null;
+    }
+
+    // delayed complete response
+    @PostMapping("/ask/answerJava")
+    public String getAnswerString(@RequestBody String text) {
         String condition = "Your primary function is to respond to java based questions so you must only reply to java focused question and return \"ask me java!!\" otherwise";
         String constraint = "keep your response under 300 worlds";
 

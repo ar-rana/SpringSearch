@@ -26,7 +26,7 @@ const Fundamentals = () => {
       <div>
         <HCard title={"Inversion of Control (IOC)"} text={data[0]} img={ioc}/>
         <HCard2 title={"Dependency Injection (DI)"} text={data[1]} img={di}/>
-        <HCard title={"Beans"} text={data[1]} img={bean}/>
+        <HCard title={"Beans"} text={data[2]} img={bean}/>
         <HCard2 title={"Autowiring & Annotations"} text={data[3]} img={aa}/>
       </div>
     </div>
